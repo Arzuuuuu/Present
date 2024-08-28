@@ -22,7 +22,7 @@ yesBtn.addEventListener('click', () => {
 
     // Add an event listener to the new button to link to another page
     avantiBtn.addEventListener('click', () => {
-        window.location.href = 'nextpage.html'; // Replace with your desired URL
+        window.location.href = 'page4.html'; // Replace with your desired URL
     });
 
     // Append the new button to the wrapper
