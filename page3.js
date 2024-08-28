@@ -29,7 +29,13 @@ yesBtn.addEventListener('click', () => {
     wrapper.appendChild(avantiBtn);
 
     // Attempt to play the background music
-    audio.play()
+    if (audio) {
+        // Set volume (optional)
+        audio.volume = 0.1;
+
+        // Play audio
+        audio.play()
+    }
 });
 
 
