@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clickable Expanding Dot Animation</title>
+  <link rel="stylesheet" href="lego.css">
+</head>
+<body>
+
+  <!-- Expanding Dot Container -->
+  <div id="expanding-dot"></div>
+
+  <!-- Video Element (hidden initially) -->
+  <video id="intro-video" width="100%" height="auto" muted>
+    <source src="./lego.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Audio Element -->
+  <audio id="intro-audio" src="./lego.mp3"></audio>
+
+  <!-- Next Button (hidden initially) -->
+  <button id="next-button" onclick="goToNextPage()">Next</button>
+
+  <script src="lego.js"></script>
+</body>
+</html>

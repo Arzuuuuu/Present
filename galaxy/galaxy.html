@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text on Image Centered</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      background-image: url("./H7omj-Uh-ezgif.com-resize.gif");
+    }
+
+    .container {
+      position: relative;
+      max-width: 90%; /* Ensure the image and text are responsive */
+      text-align: center;
+    }
+
+    #image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5em; /* Adjust font size */
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      padding: 0 10px;
+      box-sizing: border-box;
+      max-width: 90%; /* Prevent text overflow */
+      word-wrap: break-word; /* Ensure long words wrap */
+    }
+
+    #nextPageBtn {
+      display: none;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1.5em;
+      cursor: pointer;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      align-self: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img id="image" src="image1.jpg" alt="Image" />
+    <div class="text"></div>
+  </div>
+  
+  <button id="nextPageBtn" onclick="goToNextPage()">Next Page</button>
+
+
+  <script>
+    
+
+   class TextScramble {
+  constructor(el) {
+    this.el = el;
+    this.chars = '!<>-_\\/[]{}—=+*^?#________';
+    this.update = this.update.bind(this);
+  }
+  
+  setText(newText) {
+    const oldText = this.el.innerText;
+    const length = Math.max(oldText.length, newText.length);
+    const promise = new Promise((resolve) => (this.resolve = resolve));
+    this.queue = [];
+    for (let i = 0; i < length; i++) {
+      const from = oldText[i] || '';
+      const to = newText[i] || '';
+      const start = Math.floor(Math.random() * 80); // Increased from 60 to 80
+      const end = start + Math.floor(Math.random() * 80); // Increased from 60 to 80
+      this.queue.push({ from, to, start, end });
+    }
+    cancelAnimationFrame(this.frameRequest);
+    this.frame = 0;
+    this.update();
+    return promise;
+  }
+
+  update() {
+    let output = '';
+    let complete = 0;
+    for (let i = 0, n = this.queue.length; i < n; i++) {
+      let { from, to, start, end, char } = this.queue[i];
+      if (this.frame >= end) {
+        complete++;
+        output += to;
+      } else if (this.frame >= start) {
+        if (!char || Math.random() < 0.28) {
+          char = this.randomChar();
+          this.queue[i].char = char;
+        }
+        output += `<span class="dud">${char}</span>`;
+      } else {
+        output += from;
+      }
+    }
+    this.el.innerHTML = output;
+    if (complete === this.queue.length) {
+      this.resolve();
+    } else {
+      this.frameRequest = requestAnimationFrame(this.update);
+      this.frame++;
+    }
+  }
+
+  randomChar() {
+    return this.chars[Math.floor(Math.random() * this.chars.length)];
+  }
+}
+
+const phrases = [
+  'Sai?',
+  'sto ancora imparando a come capirti',
+  "come stamparti un sorriso in faccia",
+  'a come sei tu in ogni tua sfumatura',
+  "ancora imparando le cose che tu ami e ti piacciono",
+  'a come essere il meglio per te',
+  'a come amarti per bene nel modo in cui ti renda protetta',
+  'io sto ancora imparando, percio per favore aspettami...',
+  'ti posso dimostrare la versione migliore di me e trattarti meglio di chiunque',
+  '<3',
+];
+
+const images = [
+  './IM1.jpg',
+  './IM2.jpg',
+  './IM3.jpg',
+  './IM4.jpg',
+  './IM5.jpg',
+  './IM6.jpg',
+  './IM7.jpg',
+  './IM8.jpg',
+  './IM9.jpg',
+  'https://via.placeholder.com/600x400?text=Image+10',
+];
+
+const el = document.querySelector('.text');
+const fx = new TextScramble(el);
+const imgEl = document.getElementById('image');
+const nextPageBtn = document.getElementById('nextPageBtn');
+
+
+
+let counter = 0;
+const next = () => {
+  fx.setText(phrases[counter]).then(() => {
+    if (counter === phrases.length - 1) {
+      nextPageBtn.style.display = 'block';
+    } else {
+      setTimeout(next, 2000); // Increased from 1200ms to 2000ms
+    }
+  });
+  imgEl.src = images[counter];
+  counter = (counter + 1) % phrases.length;
+};
+
+next();
+
+function goToNextPage() {
+    window.location.href = '../flippingCards/flippingCard.html'; // Navigates to page6.html
+}
+
+const vid = document.getElementById("background-music");
+vid.volume = 0.1;
+
+  </script>
+
+<audio id="background-music" autoplay>
+  <source src=".\galaxy.mp3" type="audio/mpeg">
+</audio>
+</body>
+</html>

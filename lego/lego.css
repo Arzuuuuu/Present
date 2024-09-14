@@ -1,0 +1,74 @@
+/* Resetting some basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    background-color: #ead3f6;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+  }
+  
+  /* Expanding Dot */
+  #expanding-dot {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 2s ease-in-out;
+    z-index: 1;
+    cursor: pointer; /* Make the dot look clickable */
+  }
+  
+  #expanding-dot.expand {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    background-color: #ffffff;
+    cursor: default;
+  }
+  
+  /* Video */
+  #intro-video {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+  }
+  
+  /* Next Button */
+  #next-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 3;
+    transition: background-color 0.3s ease;
+  }
+  
+  #next-button:hover {
+    background-color: #2980b9;
+  }
+  
