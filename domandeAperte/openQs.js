@@ -60,6 +60,6 @@ function displayFinalMessage() {
 
     // Add an event listener to navigate to the next page when the button is clicked
     document.getElementById('nextPageButton').addEventListener('click', function() {
-        window.location.href = '../end/end.html'; // Replace with your actual next page URL
+        window.location.href = '../lego/lego.html'; // Replace with your actual next page URL
     });
 }
