@@ -26,5 +26,5 @@ window.onload = function () {
 
 // Function to handle the "Next" button click
 function goToNextPage() {
-  window.location.href = "next-page.html"; // Change this to your desired next page URL
+  window.location.href = "../miAmi/miAmi.html"; // Change this to your desired next page URL
 }
