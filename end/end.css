@@ -243,13 +243,16 @@ body {
 
 .letter-content {
   overflow: hidden;
-  white-space: pre-wrap;
+  white-space: pre-wrap; /* Allows the text to wrap to the next line */
   font-family: sans-serif;
   color: #fff;
   position: relative;
   z-index: 10;
   font-size: 1.2em;
   line-height: 1.5;
+  max-width: 100%; /* Ensure the container stays within the envelope */
+  padding: 1em;    /* Adds some padding for spacing inside the envelope */
+  box-sizing: border-box; /* Includes padding within width */
 }
 
 .letter-content p {
@@ -257,10 +260,12 @@ body {
   display: inline-block;
   font-family: 'Courier', monospace;
   font-size: 1.2em;
-  white-space: nowrap;
+  white-space: normal; /* Allow the text to wrap to the next line */
   overflow: hidden;
   border-right: .15em solid #fff;
   animation: typing 5s steps(40, end), blink .75s step-end infinite;
+  width: auto; /* Automatically adjust the width of the container */
+  max-width: 100%; /* Prevent overflow */
 }
 
 .display-msg {
