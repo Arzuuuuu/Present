@@ -54,6 +54,12 @@ body {
   box-sizing: border-box;
   position: relative;
   z-index: 9;
+  width: 26em; /* Fixed width for the content box */
+  height: 22em; /* Fixed height for the content box */
+  overflow: auto; /* Scrollbars will appear if content overflows */
+  background: #fff; /* Background color for the content */
+  border-radius: 0.5em; /* Rounded corners */
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.3); /* Shadow for better visibility */
   transition: all 0.5s ease-in-out;
   transition-delay: 1s;
 }
@@ -242,30 +248,29 @@ body {
 }
 
 .letter-content {
-  overflow: hidden;
-  white-space: pre-wrap; /* Allows the text to wrap to the next line */
+  overflow: auto; /* Scrollbars will appear if content overflows */
+  white-space: pre-wrap; /* Allows text to wrap to the next line */
   font-family: sans-serif;
-  color: #fff;
+  color: #000; /* Dark text for better readability */
   position: relative;
   z-index: 10;
-  font-size: 1.2em;
-  line-height: 1.5;
+  font-size: 1em; /* Adjusted to fit within the box */
+  line-height: 1.4; /* Line height for readability */
   max-width: 100%; /* Ensure the container stays within the envelope */
+  max-height: 100%; /* Ensure the container stays within the envelope */
   padding: 1em;    /* Adds some padding for spacing inside the envelope */
-  box-sizing: border-box; /* Includes padding within width */
+  box-sizing: border-box; /* Includes padding within width and height */
+  text-align: left; /* Align text to the left */
 }
 
 .letter-content p {
   position: relative;
-  display: inline-block;
+  display: block; /* Display block for full width */
   font-family: 'Courier', monospace;
-  font-size: 1.2em;
-  white-space: normal; /* Allow the text to wrap to the next line */
+  font-size: 1em; /* Match font size to container */
+  white-space: pre-wrap; /* Ensure text wraps properly */
   overflow: hidden;
-  border-right: .15em solid #fff;
-  animation: typing 5s steps(40, end), blink .75s step-end infinite;
-  width: auto; /* Automatically adjust the width of the container */
-  max-width: 100%; /* Prevent overflow */
+  margin: 0;
 }
 
 .display-msg {
@@ -309,6 +314,27 @@ body {
   }
 }
 
+
+
+
+.heart-link {
+  display: inline-block;
+  background: #fff;
+  color: #222;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 0.5em;
+  border: 2px solid #ff6f6f; /* Red border to mimic a heart's color */
+  font-size: 1.5em;
+  font-weight: bold;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.3); /* Shadow for emphasis */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.heart-link:hover {
+  background: #ff6f6f; /* Change background on hover */
+  color: #fff; /* Change text color on hover */
+}
 
 /* bubbles */
 

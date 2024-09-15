@@ -16,6 +16,8 @@ body {
 .title{
     position: absolute;
     top: 10%;
+    font-size: 55px;
+    color: #8941b9;
 }
 /* Container to center the image */
 .container {
