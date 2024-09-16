@@ -213,8 +213,10 @@ function goToNextPage() {
     window.location.href = '../flippingCards/flippingCard.html'; // Navigates to page6.html
 }
 
-const vid = document.getElementById("background-music");
-vid.volume = 0.1;
+window.onload = function() {
+          const backgroundMusic = document.getElementById('background-music');
+          backgroundMusic.volume = 0.1;  
+      };
 
   </script>
 
