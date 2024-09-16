@@ -53,8 +53,10 @@ const quizData = [
     {
         question: "La tua grave malattia che tu hai? XD",
         options: ["Ti dimentichi di me", "Diarrea", "Alzheimer", "So stanca"],
-        correctAnswers: [0,2,3],  
-        wrongGif: "./wrong8.gif",
+        correctAnswers: [3],  
+        wrongGif: {1:"./wrong8.gif",
+            
+        },
         correctGif: {
             0: "./correct8_1.gif",  // Gif for "Ti dimentichi di me"
             2: "./correct8_2.gif",  // Gif for "Alzheimer"
@@ -114,7 +116,7 @@ function checkAnswer(selectedIndex) {
 function showCompletionMessage() {
     const feedbackDiv = document.getElementById('feedback');
     feedbackDiv.innerHTML = `
-        <p>You've completed the quiz!</p>
+        <p>Hai completato il QUIZZZZ</p>
         <button id="next-page-btn" onclick="goToNextPage()">Go to Next Page</button>
     `;
 }

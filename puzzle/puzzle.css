@@ -1,0 +1,92 @@
+body {
+      font-family: Arial, Helvetica, "Liberation Sans", FreeSans, sans-serif;
+      background-color: #c171ec;
+      margin: 0;
+      padding: 0;
+      border-width: 0;
+      cursor: pointer;
+    }
+
+    #menu {
+      position: relative;
+      list-style-type: none;
+      padding-left: 5px;
+      z-index: 1000;
+      /* 1 */
+      display: inline-block;
+      text-align: center;
+    }
+
+    #menu li {
+      margin: 2px;
+      padding: 4px 10px;
+      border-radius: 5px;
+      background-color: #ead3f6;
+    }
+
+    #menu li:hover {
+      background-color: #c5a0da;
+    }
+
+    #forPuzzle {
+      position: absolute;
+      width: 95vw;
+      height: 95vh;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ead3f6;
+      overflow: hidden;
+    }
+
+    .polypiece {
+      display: block;
+      overflow: hidden;
+      position: absolute;
+    }
+
+    .moving {
+      transition-property: top, left;
+      transition-duration: 1s;
+      transition-timing-function: linear;
+    }
+
+    .gameCanvas {
+      display: none;
+      overflow: hidden;
+      position: absolute;
+    }
+
+
+
+
+
+    .top-right-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      width: 40px; /* Adjust size as needed */
+      height: 40px; /* Ensure it’s the same as width for a circle */
+      border-radius: 50%; /* Makes the button circular */
+      background-color: #f0d4f4; /* Default color (e.g., light pink) */
+      color: white;
+      font-family: Georgia, serif;
+      text-decoration: none; /* Remove underline */
+      display: flex; /* Center text */
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1000; /* Ensure it stays on top of other content */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center; /* Center text */
+      font-size: 16px; /* Adjust font size as needed */
+    }
+    
+    .top-right-button:hover {
+      background-color: #eda8f7; /* Darker pink on hover */
+    }
+    
+    .top-right-button::before {
+       /* Example icon (e.g., hamburger menu) */
+      font-size: 20px; /* Adjust icon size */
+    }
