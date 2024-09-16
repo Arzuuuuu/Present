@@ -3,7 +3,7 @@ const messages = [
     'Hmm, non è proprio giusto. Prova un’altra volta!',
     'Quasi, ma non proprio. Forse prova un’altra combinazione?',
     'Nope, non è quello giusto. Forse il tuo cane ha camminato sulla tastiera?',
-    'Oopsie! Password non trovata. Prova con la parola “amore”?'
+    'Oopsie! Password non trovata. Prova qualcosa con “banana”?'
   ];
   
   let attemptCount = 0; // Contatore per il numero di tentativi errati

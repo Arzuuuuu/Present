@@ -1,3 +1,5 @@
+
+
 const quizData = [
     {
         question: "Quando ci siamo incontrati?",
@@ -39,23 +41,26 @@ const quizData = [
         options: ["Non credi?", "Ah di", "Easy Peasy Lemon Squeezy", "Ci sta"],
         correctAnswers: [0],  
         wrongGif: "./wrong6.gif",
-        correctGif: "correct-answer2.gif"
+        correctGif: "./correct6.gif"
     },
     {
         question: "Cosa ti portai la prima volta che ci siamo visti?",
         options: ["Rosa", "Piadina", "IPhone", "So povero"],
         correctAnswers: [0,1],  
         wrongGif: "./wrong7.gif",
-        correctGif: "correct-answer2.gif"
+        correctGif: "./correct7.gif"
     },
     {
         question: "La tua grave malattia che tu hai? XD",
         options: ["Ti dimentichi di me", "Diarrea", "Alzheimer", "So stanca"],
         correctAnswers: [0,2,3],  
         wrongGif: "./wrong8.gif",
-        correctGif: "correct-answer2.gif"
+        correctGif: {
+            0: "./correct8_1.gif",  // Gif for "Ti dimentichi di me"
+            2: "./correct8_2.gif",  // Gif for "Alzheimer"
+            3: "./correct8_2.gif"   // Gif for "So stanca"
     },
-
+    }
 
 ];
 
@@ -82,7 +87,11 @@ function checkAnswer(selectedIndex) {
 
     if (questionData.correctAnswers.includes(selectedIndex)) {
         // Show correct GIF and move to next question
-        feedbackDiv.innerHTML = `<img src="${questionData.correctGif}" alt="Correct!">`;
+        if (currentQuestionIndex === quizData.length - 1) {
+            feedbackDiv.innerHTML = `<img src="${questionData.correctGif[selectedIndex]}" alt="Correct!">`;
+        } else {
+            feedbackDiv.innerHTML = `<img src="${questionData.correctGif}" alt="Correct!">`;
+        }
 
         setTimeout(() => {
             currentQuestionIndex++;
@@ -93,7 +102,12 @@ function checkAnswer(selectedIndex) {
             }
         }, 2000); 
     } else {
-        feedbackDiv.innerHTML = `<img src="${questionData.wrongGif}" alt="Try Again!">`;
+        // For wrong answers, show specific wrong gifs
+        if (typeof questionData.wrongGif === 'object') {
+            feedbackDiv.innerHTML = `<img src="${questionData.wrongGif[selectedIndex]}" alt="Try Again!">`;
+        } else {
+            feedbackDiv.innerHTML = `<img src="${questionData.wrongGif}" alt="Try Again!">`;
+        }
     }
 }
 
@@ -111,3 +125,9 @@ function goToNextPage() {
 
 // Load the first question
 loadQuestion();
+
+
+const backgroundMusic = document.getElementById('background-music');
+backgroundMusic.volume = 0.6;  // Set the volume to 60%
+backgroundMusic.play();        // Start the music
+

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fun Quiz</title>
+    <link rel="icon" href="../postlettera/cuore.jpg">
     <link rel="stylesheet" href="quiz.css">
 </head>
 <body>
@@ -22,5 +23,14 @@
     </div>
     
     <script src="quiz.js"></script>
+    <audio id="background-music" autoplay>
+        <source src=".\just the way you are.mp3" type="audio/mpeg">
+      </audio>
+      <script>
+        window.onload = function() {
+            const backgroundMusic = document.getElementById('background-music');
+            backgroundMusic.volume = 0.01;  // Set volume to 60%
+        };
+    </script>
 </body>
 </html>

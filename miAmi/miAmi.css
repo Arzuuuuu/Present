@@ -182,7 +182,7 @@ button:nth-child(2) {
     width: 40px; /* Adjust size as needed */
     height: 40px; /* Ensure it’s the same as width for a circle */
     border-radius: 50%; /* Makes the button circular */
-    background-color: #c19b98; /* Default color (e.g., light pink) */
+    background-color: #f0f0f0; /* Default color (e.g., light pink) */
     color: white;
     font-family: Georgia, serif;
     text-decoration: none; /* Remove underline */
@@ -197,7 +197,7 @@ button:nth-child(2) {
 }
 
 .top-left-button:hover {
-    background-color: #a8827f; /* Darker pink on hover */
+    background-color: #cec3c3; /* Darker pink on hover */
 }
 
 .top-left-button::before {
