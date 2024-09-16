@@ -137,6 +137,14 @@
 		<a href="../Quiz/quiz.html" class="cta-button">Let's goooooo</a> <!-- Button added here -->
  </div>
 <!-- partial -->
-  
+<audio id="background-music" autoplay>
+    <source src=".\things.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+    window.onload = function() {
+        const backgroundMusic = document.getElementById('background-music');
+        backgroundMusic.volume = 0.01;  
+    };
+</script>
 </body>
 </html>
