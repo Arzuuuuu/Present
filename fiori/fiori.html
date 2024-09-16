@@ -336,4 +336,14 @@
     </a>
     
     <script src="fiori.js"></script>
+
+    <audio id="background-music" autoplay>
+      <source src=".\dandelions.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+      window.onload = function() {
+          const backgroundMusic = document.getElementById('background-music');
+          backgroundMusic.volume = 0.01;  
+      };
+  </script> 
   </body>
