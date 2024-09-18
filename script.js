@@ -1,15 +1,15 @@
 const messages = [
-    'Ops! Sembra che tu abbia bisogno di un po’ di pratica. Riprova!',
+    'Ops! Sembra che tu abbia bisogno di un po’ di pratica o un po di memoria. Riprova!',
     'Hmm, non è proprio giusto. Prova un’altra volta!',
     'Quasi, ma non proprio. Forse prova un’altra combinazione?',
     'Nope, non è quello giusto. Forse il tuo cane ha camminato sulla tastiera?',
-    'Oopsie! Password non trovata. Prova qualcosa con “pippa”?'
+    'Oopsie! Password non trovata. Prova qualcosa con “Banana”?'
   ];
   
   let attemptCount = 0; // Contatore per il numero di tentativi errati
   
   function checkPassword() {
-    const correctPassword = 'pippa';  // Imposta la password corretta
+    const correctPassword = 'Banana2000';  // Imposta la password corretta
     const passwordInput = document.getElementById('passwordInput').value;
     const errorMessage = document.getElementById('errorMessage');
     
